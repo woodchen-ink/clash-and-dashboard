@@ -46,10 +46,8 @@ function getControllerFromLocation (): string | null {
 }
 
 // jotai v2 use initialValue first avoid hydration warning, but we don't want that
-const hostsStorageOrigin = localStorage.getItem('externalControllers') ??
-    getControllerFromLocation() ??
-    '[{ "hostname": "127.0.0.1", "port": 7890, "secret": "" }]'
-const hostSelectIdxStorageOrigin = localStorage.getItem('externalControllerIndex') ?? '0'
+const hostsStorageOrigin = '[{ "hostname": "127.0.0.1", "port": 9090, "secret": "" }]'
+const hostSelectIdxStorageOrigin = '0'
 
 export const hostsStorageAtom = atomWithStorage<Array<{
     hostname: string
