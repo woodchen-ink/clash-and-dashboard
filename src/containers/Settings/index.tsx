@@ -192,15 +192,6 @@ export default function Settings () {
                         />
                     </div>
                 </div>
-                <div className="flex flex-wrap">
-                    <div className="w-full flex items-center justify-between px-8 py-3 md:w-1/2">
-                        <span className="label font-bold">{t('labels.externalController')}</span>
-                        <div className="flex items-center space-x-2">
-                            { controllers }
-                        </div>
-                    </div>
-                    <div className="w-1/2 px-8"></div>
-                </div>
             </Card>
             {/* <Card className="clash-version hidden">
                 <span className="check-icon">
