@@ -91,20 +91,15 @@ const clientAtom = atom({
 })
 
 export function useClient () {
-    const {
-        hostname,
-        port,
-        secret,
-        protocol,
-    } = useAPIInfo()
+    const { secret } = useAPIInfo()
 
     const [item, setItem] = useAtom(clientAtom)
-    const key = `${protocol}//${hostname}:${port}?secret=${secret}`
+    const key = `/api?secret=${secret}`
     if (item.key === key) {
         return item.instance!
     }
 
-    const client = new Client(`${protocol}//${hostname}:${port}`, secret)
+    const client = new Client('/api', secret)
     setItem({ key, instance: client })
 
     return client

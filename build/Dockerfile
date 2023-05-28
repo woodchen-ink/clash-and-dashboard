@@ -6,5 +6,6 @@ RUN apk update && apk add nginx
 
 COPY ./dist/ /dashboard
 COPY ./build/nginx.conf /etc/nginx
+COPY ./build/start.sh /
 
-CMD nginx && /clash
+ENTRYPOINT [ "sh", "/start.sh" ] 

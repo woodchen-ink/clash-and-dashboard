@@ -265,7 +265,7 @@ export function useLogsStreamReader () {
         if (level) {
             const apiInfo = apiInfoRef.current
             const protocol = apiInfo.protocol === 'http:' ? 'ws:' : 'wss:'
-            const logUrl = `${protocol}//${apiInfo.hostname}:${apiInfo.port}/logs?level=${level}&token=${encodeURIComponent(apiInfo.secret)}`
+            const logUrl = `${protocol}//${window.location.host}/api/logs?level=${level}&token=${encodeURIComponent(apiInfo.secret)}`
             item.connect(logUrl)
         }
     }, [apiInfoRef, item, level, previousKey])
@@ -279,7 +279,7 @@ export function useConnectionStreamReader () {
     const connection = useRef(new StreamReader<API.Snapshot>({ bufferLength: 200 }))
 
     const protocol = apiInfo.protocol === 'http:' ? 'ws:' : 'wss:'
-    const url = `${protocol}//${apiInfo.hostname}:${apiInfo.port}/connections?token=${encodeURIComponent(apiInfo.secret)}`
+    const url = `${protocol}//${window.location.host}/api/connections?token=${encodeURIComponent(apiInfo.secret)}`
 
     useEffect(() => {
         connection.current.connect(url)
