@@ -6,6 +6,9 @@
 
 ## 打包
 ```sh
+npm install -g pnpm
+pnpm i
+pnpm build
 docker build -f ./build/Dockerfile -t clash-and-dashboard:latest .
 ```
 

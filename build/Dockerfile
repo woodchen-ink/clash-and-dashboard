@@ -1,4 +1,4 @@
-FROM dreamacro/clash:v1.16.0
+FROM --platform=$TARGETPLATFORM dreamacro/clash:v1.16.0
 
 EXPOSE 8080
 
