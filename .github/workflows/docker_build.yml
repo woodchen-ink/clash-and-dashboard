@@ -14,6 +14,26 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+    
+     # 设置 Node.js 环境
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+       
+    # 安装 pnpm
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        version: 8
+        
+    # 安装依赖
+    - name: Install dependencies
+      run: pnpm install
+      
+    # 构建前端项目
+    - name: Build frontend
+      run: pnpm build
       
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
