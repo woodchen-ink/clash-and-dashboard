@@ -67,7 +67,7 @@
         "jotai": "^2.0.4",
         "jotai-immer": "^0.2.0",
         "lodash-es": "^4.17.21",
-        "neverthrow": "^6.0.0",
+        "neverthrow": "^8.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.10.0",
