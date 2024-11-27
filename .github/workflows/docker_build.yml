@@ -8,30 +8,23 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: [amd64, arm64]
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
     
-     # 设置 Node.js 环境
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '22'
        
-    # 安装 pnpm
     - name: Install pnpm
       uses: pnpm/action-setup@v4
       with:
         version: 8
         
-    # 安装依赖
     - name: Install dependencies
       run: pnpm install
       
-    # 构建前端项目
     - name: Build frontend
       run: pnpm build
       
@@ -49,7 +42,6 @@ jobs:
         username: woodchen
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
         
-    # 添加缓存元数据
     - name: Docker meta
       id: meta
       uses: docker/metadata-action@v5
@@ -59,15 +51,18 @@ jobs:
           type=raw,value=latest
           type=sha,prefix={{branch}}-
           
-    # 构建和推送
     - name: Build and push Docker image
       uses: docker/build-push-action@v6
       with:
         context: .
         file: ./build/Dockerfile
-        platforms: linux/${{ matrix.platform }}
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=registry,ref=woodchen/clash-and-dashboard:buildcache-${{ matrix.platform }}
-        cache-to: type=registry,ref=woodchen/clash-and-dashboard:buildcache-${{ matrix.platform }},mode=max
+        cache-from: |
+          type=registry,ref=woodchen/clash-and-dashboard:buildcache-amd64
+          type=registry,ref=woodchen/clash-and-dashboard:buildcache-arm64
+        cache-to: |
+          type=registry,ref=woodchen/clash-and-dashboard:buildcache-amd64,mode=max
+          type=registry,ref=woodchen/clash-and-dashboard:buildcache-arm64,mode=max
