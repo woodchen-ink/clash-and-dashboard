@@ -48,8 +48,8 @@ dependencies:
     specifier: ^6.10.0
     version: 6.10.0(react-dom@18.2.0)(react@18.2.0)
   react-virtualized-auto-sizer:
-    specifier: ^1.0.15
-    version: 1.0.15(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^1.0.24
+    version: 1.0.24(react-dom@18.2.0)(react@18.2.0)
   react-window:
     specifier: ^1.8.9
     version: 1.8.9(react-dom@18.2.0)(react@18.2.0)
@@ -74,8 +74,8 @@ devDependencies:
     specifier: ^18.0.11
     version: 18.0.11
   '@types/react-virtualized-auto-sizer':
-    specifier: ^1.0.1
-    version: 1.0.1
+    specifier: ^1.0.4
+    version: 1.0.4
   '@types/react-window':
     specifier: ^1.8.5
     version: 1.8.5
@@ -2044,10 +2044,6 @@ packages:
     resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==}
     dev: true
 
-  /@types/node@18.15.11:
-    resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
-    dev: true
-
   /@types/node@22.10.0:
     resolution: {integrity: sha512-XC70cRZVElFHfIUB40FgZOBbgJYFKKMa5nb9lxcwYstFG/Mi+/Y0bGS+rs6Dmhmkpq4pnNiLiuZAbc02YCOnmA==}
     dependencies:
@@ -2064,8 +2060,8 @@ packages:
       '@types/react': 18.0.37
     dev: true
 
-  /@types/react-virtualized-auto-sizer@1.0.1:
-    resolution: {integrity: sha512-GH8sAnBEM5GV9LTeiz56r4ZhMOUSrP43tAQNSRVxNexDjcNKLCEtnxusAItg1owFUFE6k0NslV26gqVClVvong==}
+  /@types/react-virtualized-auto-sizer@1.0.4:
+    resolution: {integrity: sha512-nhYwlFiYa8M3S+O2T9QO/e1FQUYMr/wJENUdf/O0dhRi1RS/93rjrYQFYdbUqtdFySuhrtnEDX29P6eKOttY+A==}
     dependencies:
       '@types/react': 18.0.37
     dev: true
@@ -2087,7 +2083,7 @@ packages:
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 18.15.11
+      '@types/node': 22.10.0
     dev: true
 
   /@types/scheduler@0.16.3:
@@ -4153,7 +4149,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.15.11
+      '@types/node': 22.10.0
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
@@ -4742,11 +4738,11 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-virtualized-auto-sizer@1.0.15(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-01yhkssgHShMiu5W8k+86kgl8lutpl+Uef9KP4wrozXnzZjxWIgj+cH8Qi064oQpKD8myn/JNMzp4tcZNQ3Avg==}
+  /react-virtualized-auto-sizer@1.0.24(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-3kCn7N9NEb3FlvJrSHWGQ4iVl+ydQObq2fHMn12i5wbtm74zHOPhz/i64OL3c1S1vi9i2GXtZqNqUJTQ+BnNfg==}
     peerDependencies:
-      react: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0-rc
-      react-dom: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0-rc
+      react: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
+      react-dom: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
